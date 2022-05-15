@@ -3,15 +3,16 @@ import { getTokenAddress, TOKENS } from '../src/tokens';
 
 describe('getTokenAddress', () => {
   test('should work if chain is correct', () => {
-    expect(typeof getTokenAddress(CHAINS.Mainnet, TOKENS.STETH)).toBe('string');
-    expect(typeof getTokenAddress(CHAINS.Rinkeby, TOKENS.LDO)).toBe('string');
+    expect(typeof getTokenAddress(CHAINS.Avalido, TOKENS.STAVAX)).toBe(
+      'string',
+    );
   });
   test('should throw if chain is incorrect', () => {
-    expect(() => getTokenAddress(-1, TOKENS.LDO)).toThrowError();
-    expect(() => getTokenAddress('' as any, TOKENS.LDO)).toThrowError();
+    expect(() => getTokenAddress(-1, TOKENS.STAVAX)).toThrowError();
+    expect(() => getTokenAddress('' as any, TOKENS.STAVAX)).toThrowError();
   });
   test('should throw if token is incorrect', () => {
-    expect(() => getTokenAddress(CHAINS.Mainnet, 'weth' as any)).toThrowError();
-    expect(() => getTokenAddress(CHAINS.Mainnet, '' as any)).toThrowError();
+    expect(() => getTokenAddress(CHAINS.Avalido, 'weth' as any)).toThrowError();
+    expect(() => getTokenAddress(CHAINS.Avalido, '' as any)).toThrowError();
   });
 });
