@@ -12,6 +12,7 @@ export enum CHAINS {
   Moonriver = 1285,
   Moonbase = 1287,
   Avalido=43112,
+  Fuji=43113,
 }
 
 export const CHAINS_IDS = [
